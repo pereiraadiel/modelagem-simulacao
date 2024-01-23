@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-NUM_DADOS = 1
+NUM_DADOS = 2
 NUM_FACES = 6
 NUM_ROLAGENS = int(1e5)
 rolagens = []
@@ -16,5 +16,7 @@ for i in range(NUM_ROLAGENS):
 		rolagens.append(rolarDados(NUM_DADOS))
 
 print('NUM_DADOS: ', NUM_DADOS)
-plt.hist(rolagens, align='left', bins= range(1, NUM_DADOS * NUM_FACES + 2), rwidth=0.8, edgecolor='black')
+
+plt.hist(rolagens, align='left', bins= range(1, NUM_DADOS * NUM_FACES + 2), rwidth=0.8, edgecolor='black', orientation='horizontal')
+plt.grid(axis='x', alpha=0.7)
 plt.show()
